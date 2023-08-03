@@ -103,7 +103,9 @@ class Enrollment(models.Model):
     # Other fields and methods you would like to design
 class Question(models.Model):
     # Foreign key to lessons
+    
     # question text
+    question text = models.CharField('What is Django?')
     # question grade/mark
 
     # <HINT> A sample model method to calculate if learner get the score of the question
