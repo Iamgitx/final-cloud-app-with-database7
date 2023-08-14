@@ -108,7 +108,7 @@ class Enrollment(models.Model):
 
 # Question model
 class Question(models.Model):
-    foreign_key = models.ForeignKey(Course)
+    foreign_key = models.ForeignKey(Course, on_delete=models.PROTECT)
     question text = models.CharField(max_length=300)
     question grade_mark = models.IntegerField(default=0)
 
@@ -129,6 +129,11 @@ class Question(models.Model):
     # Indicate if this choice of the question is a correct one or not
     # Other fields and methods you would like to design
 # class Choice(models.Model):
+class Choice(models.Model):
+    foreign_key = models.ForeignKey(Course, on_delete=models.PROTECT)
+    question text = models.CharField(max_length=300)
+    question grade_mark = models.IntegerField(default=0)
+
 
 # <HINT> The submission model
 # One enrollment could have multiple submission
