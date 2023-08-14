@@ -101,16 +101,16 @@ class Enrollment(models.Model):
     # Has a grade point for each question
     # Has question content
     # Other fields and methods you would like to design
-
+#class Question(models.Model):
+    # Foreign key to lesson
+    # question text
+    # question grade/mark
 
 # Question model
 class Question(models.Model):
-    # Foreign key to lessons
-    foreign_key = models.ForeignKey(Question)
-    # question text
+    foreign_key = models.ForeignKey(Course)
     question text = models.CharField(max_length=300)
-    # question grade/mark
-    question grade_mark = models.CharField()
+    question grade_mark = models.IntegerField(default=0)
 
     # <HINT> A sample model method to calculate if learner get the score of the question
     #def is_get_score(self, selected_ids):
