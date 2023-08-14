@@ -108,7 +108,7 @@ class Enrollment(models.Model):
 
 # Question model
 class Question(models.Model):
-    foreign_key = models.ForeignKey(Course, on_delete=models.PROTECT)
+    foreign_key = models.ForeignKey(Course, on_delete=models.CASCADE)
     question text = models.CharField(max_length=300)
     question grade_mark = models.IntegerField(default=0)
 
@@ -130,9 +130,9 @@ class Question(models.Model):
     # Other fields and methods you would like to design
 # class Choice(models.Model):
 class Choice(models.Model):
-    foreign_key = models.ForeignKey(Course, on_delete=models.PROTECT)
+    foreign_key = models.ForeignKey(Course, on_delete=models.CASCADE)
     question text = models.CharField(max_length=300)
-    question grade_mark = models.IntegerField(default=0)
+    question grade_mark = models.BooleanField(default=False)
 
 
 # <HINT> The submission model
