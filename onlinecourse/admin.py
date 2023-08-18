@@ -4,6 +4,13 @@ from .models import *
 
 # <HINT> Register QuestionInline and ChoiceInline classes here
 
+class QuestionInline(admin.StackedInline):
+    model = Question 
+    extra = 3
+
+class ChoiceInline(admin.StackedInline):
+    model = Choice
+    extra = 3
 
 class LessonInline(admin.StackedInline):
     model = Lesson
